@@ -1,4 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+
+interface Response {
+  name:String,
+  full_name:String,
+  owner: {
+    login: String,
+    repos_url: String,
+  }
+}
 
 @Component({
   selector: 'app-git',
@@ -7,9 +17,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GitComponent implements OnInit {
 
-  constructor() { }
+  currentData: Response;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getRepo("Eliude");
   }
+
+
+  getRepo(user) {
+    this.http.get<Response>('https://api.github.com/users/'+user+'/repos')
+    .subscribe(data => {
+      console.log(data)
+      this.currentData = data;
+    });
+  }
+
 
 }

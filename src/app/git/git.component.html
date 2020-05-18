@@ -1,1 +1,47 @@
-<p>coin works!</p>
+<section>
+
+    <mat-tab-group>
+      <mat-tab label="Eliude" value="EliudeLima">
+        <a (click)="getRepo('EliudeLima')" class="btn btn-primary primary text-white mt-5">Obter Repositório</a>
+       
+        <mat-list *ngFor="let data of this.currentData">
+          <mat-list-item><a href="#"><b>Repositório {{data.owner.name}}</b></a></mat-list-item>
+          <mat-list-item><b>Estrelas:</b></mat-list-item>
+          <mat-list-item><a href="#"><b>URL: {{data.owner.login}}</b></a></mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-list>
+
+      </mat-tab>
+      <mat-tab label="Fischer" value="PedroFischerDeveloper" (click)="getRepo('PedroFischerDeveloper')">
+        <a (click)="getRepo('PedroFischerDeveloper')" class="btn btn-primary primary text-white mt-5">Obter Repositório</a>
+        
+        <mat-list>
+          <mat-list-item><a href="#"><b>Repositório: </b></a></mat-list-item>
+          <mat-list-item><b>Estrelas:</b></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item><a href="#"><b>Repositório: </b></a></mat-list-item>
+          <mat-list-item><b>Estrelas:</b></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item><a href="#"><b>Repositório: </b></a></mat-list-item>
+          <mat-list-item><b>Estrelas:</b></mat-list-item>
+        </mat-list>
+
+      </mat-tab>
+      <mat-tab label="Weskley" value="WeskleySantos" (click)="getRepo('PedroFischerDeveloper')">
+        <a (click)="getRepo('WeskleySantos')" class="btn btn-primary primary text-white mt-5">Obter Repositório</a>
+        
+        <mat-list>
+          <mat-list-item><a href="#"><b>Repositório {{this.currentData }}</b></a></mat-list-item>
+          <mat-list-item><b>Estrelas:</b></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item><a href="#"><b>Repositório</b></a></mat-list-item>
+          <mat-list-item><b>Estrelas:</b></mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item><a href="#"><b>Repositório</b></a></mat-list-item>
+          <mat-list-item><b>Estrelas:</b></mat-list-item>
+        </mat-list>
+      </mat-tab>
+     
+    </mat-tab-group>
+    
+  </section>
