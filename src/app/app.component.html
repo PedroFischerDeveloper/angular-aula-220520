@@ -1,8 +1,10 @@
-
-    <mat-card>
-      <a [routerLink]="['git']" class="link">Github</a>
-      <a [routerLink]="['coin']" class="link">Coint</a>
-    </mat-card>
-  <main>
-    <router-outlet></router-outlet>
-  </main>
+<mat-toolbar color="primary">
+   
+    <mat-icon [routerLink]="['/']" aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+   
+    <nav>
+      <a [routerLink]="['git']">Git</a>
+      <a [routerLink]="['coin']">Coin</a>
+    </nav>
+    
+</mat-toolbar>

@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { IndexComponent } from './index/index.component';
 import { GitComponent } from './git/git.component';
 import { CoinComponent } from './coin/coin.component';
+import {MatIconModule} from '@angular/material/icon';
+
 
 const routes: Routes = [
   {path: '', component: IndexComponent},
