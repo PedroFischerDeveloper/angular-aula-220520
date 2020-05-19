@@ -4,10 +4,8 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 interface Response {
   name:String,
   full_name:String,
-  owner: {
-    login: String,
-    repos_url: String,
-  }
+  stargazers_count: Number,
+  description: String,
 }
 
 @Component({
@@ -23,7 +21,7 @@ export class GitComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getRepo("Eliude");
+    this.getRepo("");
   }
 
 
@@ -33,12 +31,12 @@ export class GitComponent implements OnInit {
     } else if (user==="EliudeLima") {
       this.topName = "Eliude";
     } else if(user==="WeskleySantos"){
-      this.topName = "WeskleySantos";
+      this.topName = "Weskley Santos";
     }
     this.http.get<Response>('https://api.github.com/users/'+user+'/repos')
     .subscribe(data => {
+      this.currentData = data; 
       console.log(data)
-      this.currentData = data;
     });
   }
 

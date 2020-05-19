@@ -1,0 +1,24 @@
+
+<section>
+    <main>
+      <div class="card" class="card p-2 mt-2 ml-2 mr-2 center">
+        <div class="card-body">
+          <h6 class="card-title text-center"><h2 class="sub-title">{{this.topName || 'Selecione uma moeda no canto esquerdo'}}</h2></h6>
+        </div>
+        <a class="btn btn-primary btn-lg mt-2 mb-2 text-white" (click)="getCoin('BRL')">Atualizar</a>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let data of this.updateList">
+            <b>Atualizado em:  </b>{{this.DateNow}}<br>
+            <b>Código:  </b> <span class="badge badge-primary badge-pill">{{data.data.bpi.BRL.code}}</span><br>
+            <b>Taxa:  </b>{{data.data.bpi.BRL.rate_float}}<br>
+            <b>Descrição:  </b>{{data.data.bpi.BRL.description}}<br>
+          </li>
+        </ul>
+      </div>
+      <footer>
+        <p>Todos os direitos reservados 2020</p>
+      </footer>
+    
+    </main>
+    
+  </section>
