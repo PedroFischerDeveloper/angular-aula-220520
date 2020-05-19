@@ -1,9 +1,8 @@
 <mat-toolbar color="primary">
     <mat-icon [routerLink]="['/']" aria-hidden="false" aria-label="Example home icon">home</mat-icon>
-    <nav>
-      
-    </nav>
+    <a [routerLink]="['/git']">Repositórios</a>
+    <a [routerLink]="['/coin']">Moeda</a>
 </mat-toolbar>
-<div class="container-fluid">
+<div>
   <router-outlet></router-outlet>
 </div>

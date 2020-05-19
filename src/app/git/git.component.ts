@@ -18,6 +18,7 @@ interface Response {
 export class GitComponent implements OnInit {
 
   currentData: Response;
+  topName: String;
 
   constructor(private http: HttpClient) { }
 
@@ -27,6 +28,13 @@ export class GitComponent implements OnInit {
 
 
   getRepo(user) {
+    if(user==="PedroFischerDeveloper") {
+      this.topName = "Fischer";
+    } else if (user==="EliudeLima") {
+      this.topName = "Eliude";
+    } else if(user==="WeskleySantos"){
+      this.topName = "WeskleySantos";
+    }
     this.http.get<Response>('https://api.github.com/users/'+user+'/repos')
     .subscribe(data => {
       console.log(data)
