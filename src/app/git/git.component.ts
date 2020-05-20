@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 
+// INTERFACE
 interface Response {
   name:String,
   full_name:String,
@@ -21,6 +22,7 @@ export class GitComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    // EXECUTA A FUNÇÃO GETREPO AO INICIAR O COMPONENT
     this.getRepo("");
   }
 
@@ -35,8 +37,7 @@ export class GitComponent implements OnInit {
     }
     this.http.get<Response>('https://api.github.com/users/'+user+'/repos')
     .subscribe(data => {
-      this.currentData = data; 
-      console.log(data)
+      this.currentData = data;
     });
   }
 

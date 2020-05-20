@@ -13,6 +13,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
 import { CoinComponent } from './coin/coin.component';
 import { GitComponent } from './git/git.component';
+import { USDComponent } from './usd/usd.component';
 
 
 
@@ -22,6 +23,7 @@ import { GitComponent } from './git/git.component';
     IndexComponent,
     CoinComponent,
     GitComponent,
+    USDComponent,
   ],
   imports: [
     MatToolbarModule,

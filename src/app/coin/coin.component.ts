@@ -28,7 +28,7 @@ export class CoinComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getCoin("BRL");
+    this.getCoin("");
   }
 
 
@@ -38,8 +38,13 @@ export class CoinComponent implements OnInit {
       this.topName = "BRL";
     }
 
+    if(coin==="USD") {
+      this.topName = "USD";
+    }
+
     this.http.get<Response>(`https://api.coindesk.com/v1/bpi/currentprice/${coin}.json`)
     .subscribe(data => {
+      console.log(data)
       this.DateNow = new Date();
       this.currentData = data;
       this.updateList.push({

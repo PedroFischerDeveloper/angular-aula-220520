@@ -7,12 +7,24 @@
         </div>
         <a class="btn btn-primary btn-lg mt-2 mb-2 text-white" (click)="getCoin('BRL')">Atualizar</a>
         <ul class="list-group">
-          <li class="list-group-item" *ngFor="let data of this.updateList">
-            <b>Atualizado em:  </b>{{this.DateNow}}<br>
-            <b>Código:  </b> <span class="badge badge-primary badge-pill">{{data.data.bpi.BRL.code}}</span><br>
-            <b>Taxa:  </b>{{data.data.bpi.BRL.rate_float}}<br>
-            <b>Descrição:  </b>{{data.data.bpi.BRL.description}}<br>
-          </li>
+          <div>
+            <p>R$ REAL</p>
+            <li class="list-group-item" *ngFor="let data of this.updateList">
+              <b>Atualizado em:  </b>{{this.DateNow}}<br>
+              <b>Código:  </b> <span class="badge badge-primary badge-pill">{{data.data.bpi.BRL.code}}</span><br>
+              <b>Taxa:  </b>{{data.data.bpi.BRL.rate_float}}<br>
+              <b>Descrição:  </b>{{data.data.bpi.BRL.description}}<br>
+            </li>
+          </div>
+          <div>
+            <p>$ DOLLAR</p>
+            <li class="list-group-item" *ngFor="let data of this.updateList">
+              <b>Updated at:  </b>{{this.DateNow}}<br>
+              <b>Code:  </b> <span class="badge badge-primary badge-pill">{{data.data.bpi.USD.code}}</span><br>
+              <b>Rate:  </b>{{data.data.bpi.USD.rate_float}}<br>
+              <b>Desciption:  </b>{{data.data.bpi.USD.description}}<br>
+            </li>
+          </div>
         </ul>
       </div>
       <footer>
