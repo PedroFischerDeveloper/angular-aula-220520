@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
+// módulo http
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 
-// INTERFACE
+// Interface
 interface Response {
   name:String,
   full_name:String,
@@ -14,6 +16,7 @@ interface Response {
   templateUrl: './git.component.html',
   styleUrls: ['./git.component.css']
 })
+
 export class GitComponent implements OnInit {
 
   currentData: Response;
@@ -22,12 +25,13 @@ export class GitComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    // EXECUTA A FUNÇÃO GETREPO AO INICIAR O COMPONENT
     this.getRepo("");
   }
 
 
+
   getRepo(user) {
+
     if(user==="PedroFischerDeveloper") {
       this.topName = "Fischer";
     } else if (user==="EliudeLima") {
@@ -35,11 +39,12 @@ export class GitComponent implements OnInit {
     } else if(user==="WeskleySantos"){
       this.topName = "Weskley Santos";
     }
+
+
     this.http.get<Response>('https://api.github.com/users/'+user+'/repos')
     .subscribe(data => {
       this.currentData = data;
     });
   }
-
 
 }

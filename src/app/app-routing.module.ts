@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
+// componentes
 import { IndexComponent } from './index/index.component';
 import { GitComponent } from './git/git.component';
 import { CoinComponent } from './coin/coin.component';
-import {MatIconModule} from '@angular/material/icon';
 
+// angular material
+import {MatIconModule} from '@angular/material/icon';
 
 const routes: Routes = [
   {path: '', component: IndexComponent},
@@ -17,3 +20,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
